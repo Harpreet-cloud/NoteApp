@@ -48,7 +48,7 @@ router.get('/notes',isAuthenticated,catchErrors(noteController.getAllNotes));
 
 router.get('/:slug/edit',catchErrors(noteController.editNote));
 
-router.post('/:slug/edit',catchErrors(noteController.updateNote));
+router.put('/:slug/edit',catchErrors(noteController.updateNote));
 
 router.delete('/:id/delete',catchErrors(noteController.deleteNote));
 

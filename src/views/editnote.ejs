@@ -3,7 +3,9 @@
 <div class="container mb-3 mt-3">
   <div class="row justify-content-center align-items-center" style="min-height: 80vh;">
     <div class="col-4">
-<form action="/<%- note.slug %>/edit"
+         
+          
+<form action="/<%- note.slug %>/edit?_method=PUT"
 method="POST">
 <%# below line <= used to show variable's(h2) value %>
 <h2 class="mb-4"><%= title %></h2>
