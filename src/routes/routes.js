@@ -50,7 +50,7 @@ router.get('/:slug/edit',catchErrors(noteController.editNote));
 
 router.post('/:slug/edit',catchErrors(noteController.updateNote));
 
-router.delete('/:slug/delete',catchErrors(noteController.deleteNote));
+router.delete('/:id/delete',catchErrors(noteController.deleteNote));
 
 
 export default router;

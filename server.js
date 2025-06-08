@@ -30,7 +30,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());//middleware to parse json body
 app.use(cors());
 app.use(morgan("dev"));
-app.use(methodOverride("_method"));
+app.use(methodOverride('_method'));
+
 
 console.log(process.env.SECRET_KEY);
 

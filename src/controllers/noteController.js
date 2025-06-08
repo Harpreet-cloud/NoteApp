@@ -69,8 +69,8 @@ const updateNote = async (req, res) => {
 
 
 const deleteNote = async (req,res) =>{
-    const slug = req.params.slug;
-    const deletedNote= await noteHandler.deleteNote(slug);
+    const id = req.params.id;
+    const deletedNote= await noteHandler.deleteNote(id);
     req.flash('success',"Note is deleted successfully");
     res.redirect('/notes');
 }

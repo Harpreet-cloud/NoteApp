@@ -66,26 +66,7 @@
     </div>
   </div>
 </div>
-
-<script>
-
-  let formToSubmit;
-
-document.querySelectorAll('.btn-delete').forEach(button => {
-  button.addEventListener('click', function (event) {
-    const clickedButton = event.currentTarget;
-    const noteId = clickedButton.dataset.id;
-    formToSubmit = document.querySelector(`form[data-id='${noteId}']`);
-  });
-});
-
-document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
-  if (formToSubmit) {
-    formToSubmit.submit();
-  }
-});
-
-</script>
+<script src="./js/modal.js"></script>
 
 
 

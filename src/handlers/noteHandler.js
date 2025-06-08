@@ -25,9 +25,9 @@ const updateNote = async (slug, noteData) => {
   }).lean();
 };
 
-const deleteNote = async(slug) =>{
+const deleteNote = async(id) =>{
     console.log("i am deleteing this note");
-    return await Note.findByIdAndDelete(slug).lean();
+    return await Note.findByIdAndDelete(id).lean();
 }
 
 
