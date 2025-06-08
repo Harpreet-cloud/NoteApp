@@ -1,0 +1,36 @@
+
+<%- include('./partials/header.ejs') %>
+
+<div class="container mb-3 mt-3">
+  <div class="row justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="col-4">
+       <% if (errors?.message) { %>
+          <p style="color: red;"><%= errors.message %></p>
+        <% } %>
+      <form method="POST" action="/login" novalidate>
+        <h2 class="mb-4"><%= title %></h2>
+
+        <div class="mb-3">
+          <input type="text" name="username" placeholder="Username" class="form-control" value="<%= formData?.username || '' %>" />
+        <% if (errors?.username) { %>
+          <div style="color: red;"><%= errors.username %></div>
+        <% } %>
+        </div>
+
+        <div class="mb-3">
+          <input type="password" name="password" placeholder="Password" class="form-control" />
+        <% if (errors?.password) { %>
+          <div style="color: red;"><%= errors.password %></div>
+        <% } %>
+          </div>
+
+        <button type="submit" class="btn btn-dark rounded mb-3">Login</button>
+
+        <p>Don't have an account? <a href="/register">Register here</a></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/js/bootstrap.bundle.min.js"></script>
+<%- include('partials/footer') %>

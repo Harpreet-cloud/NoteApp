@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Note App</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <div>
+<a class="navbar-brand d-flex align-items-center" href="/">
+  <span class="logo-icon me-2">
+    <%- u.icon('file').toString() %>
+  </span>
+  <span><%= u.siteName %></span>
+</a>
+</div>
+
+
+
+        <ul class="navbar-nav d-flex flex-row">
+          <% if (user) { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/notes">My Notes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/add">Add Note</a>
+            </li>
+        <li class="nav-item d-flex align-items-center">
+  <form action="/logout" method="POST" class="m-0 p-0">
+    <button type="submit"
+      class="nav-link btn btn-link p-0"
+      style="color: white; text-decoration: none;"
+    >
+      Logout
+    </button>
+  </form>
+</li>
+
+          <% } else { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">
+                 <span class="logo-icon me-2">
+    <%- u.icon('arrow-right-circle').toString() %>
+                Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/register">
+                 <span class="logo-icon me-2">
+    <%- u.icon('user-plus').toString() %>
+  </span>Register</a>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+    </nav>
+    
+<% const categories = Object.keys(flashes) %>
+<% categories.map((category) => { %>
+  <div class="container mt-4">
+    <% if (flashes[category].length > 0) { %>
+      <% 
+        // Bootstrap class name logic
+        const bootstrapClass = category === 'error' ? 'danger' : category;
+      %>
+      <div class="alert alert-<%= bootstrapClass %> alert-dismissible" role="alert">
+        <%- flashes[category].join(', ') %>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+    <% } %>
+  </div>
+<% }) %>

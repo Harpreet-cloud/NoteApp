@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+
+<div class="container flex-grow-1 d-flex align-items-center justify-content-center"> 
+  <div class="container text-center">
+    <h1 class="mb-3">Welcome to NoteApp</h1>
+    <p class="lead mb-4">Thid is your personal note-taking app.</p>
+    <% if (!user) { %>
+      <a href="/login" class="btn btn-dark rounded me-4">Login</a>
+      <a href="/register" class="btn btn-dark rounded">Register</a>
+    <% } else { %>
+      <p class="mb-3">You are logged in as <strong><%= user.username %></strong>.</p>
+      <a href="/notes" class="btn btn-success">Go to your notes</a>
+    <% } %>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
