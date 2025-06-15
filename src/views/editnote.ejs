@@ -11,15 +11,15 @@ method="POST">
 <h2 class="mb-4"><%= title %></h2>
 <div class="mb-3">
     <label for="title" class="form-label">Title</label>
-     <input type="text" class="form-control" id="title" name="title" value="<%= note.title %>">
+     <input type="text" class="form-control" id="title" name="title" aria-describedby="title" value="<%= note.title %>">
 </div>
  <div class="mb-3">
         <label for="content" class="form-label">Content</label>
-        <textarea class="form-control" name="content" id="content"><%= note.content %></textarea>
+        <textarea class="form-control" name="content" aria-describedby="content" id="content"><%= note.content %></textarea>
 </div>
 <div class="mb-3">
     <label for="tags" class="form-label">Tags</label>
-    <input type="text" class="form-control" id="tags" name="tags" value="<%= note.tags %>" placeholder="enter tags separated by commas, e.g personal,work">
+    <input type="text" class="form-control" id="tags" name="tags" aria-describedby="tags" value="<%= note.tags %>" placeholder="enter tags separated by commas, e.g personal,work">
     </div>
       <button type="submit" class="btn btn-dark rounded">Save</button>
 

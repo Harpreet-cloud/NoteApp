@@ -11,20 +11,20 @@
         <h2 class="mb-4"><%= title %></h2>
 
         <div class="mb-3">
-          <input type="text" name="username" placeholder="Username" class="form-control" value="<%= formData?.username || '' %>" />
+          <input type="text" name="username" placeholder="Username"  aria-describedby="usernameHelp" class="form-control" value="<%= formData?.username || '' %>" />
         <% if (errors?.username) { %>
           <div style="color: red;"><%= errors.username %></div>
         <% } %>
         </div>
 
         <div class="mb-3">
-          <input type="password" name="password" placeholder="Password" class="form-control" />
+          <input type="password" name="password" placeholder="Password" aria-describedby="passwordHelp" class="form-control" />
         <% if (errors?.password) { %>
           <div style="color: red;"><%= errors.password %></div>
         <% } %>
           </div>
 
-        <button type="submit" class="btn btn-dark rounded mb-3">Login</button>
+        <button type="submit" class="btn btn-dark rounded mb-3"  aria-describedby="loginButton">Login</button>
 
         <p>Don't have an account? <a href="/register">Register here</a></p>
       </form>
